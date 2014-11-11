@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+  set(HID_SRCS "mac/hid.c")
+endif()
+add_library(hidapi ${HID_SRCS})
+set_target_properties(hidapi PROPERTIES INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/hidapi")
